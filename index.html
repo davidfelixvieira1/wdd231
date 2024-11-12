@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WDD231 Course Home Page">
+  <meta name="author" content="David Vieira">
+  <title>Course Home Page</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Welcome to WDD231</h1>
+    <nav id="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Chamber</a></li>
+        <li><a href="https://github.com/davidfelixvieira1/wdd231">GitHub Profile</a></li>
+        <li><a href="https://www.linkedin.com/in/david-vieira-7a6250215/">LinkedIn</a></li>
+      </ul>
+      <div id="hamburger">&#9776;</div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="certificate">
+      <h2>Certificate Courses</h2>
+      <div id="course-list"></div>
+      <button onclick="filterCourses('all')">All Courses</button>
+      <button onclick="filterCourses('WDD')">WDD Courses</button>
+      <button onclick="filterCourses('CSE')">CSE Courses</button>
+      <p>Total Credits: <span id="total-credits"></span></p>
+    </section>
+    <section>
+      <h2>Course Overview</h2>
+      <p>This course will cover various topics in web design and development.</p>
+    </section>
+    <section>
+      <h2>Get Started</h2>
+      <p>Begin your journey into web development!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="current-year"></span> David Vieira, Brazil</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>
