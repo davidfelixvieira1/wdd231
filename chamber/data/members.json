@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Tech Solutions",
+        "address": "1234 Tech Ave, Suite 100",
+        "phone": "555-1234",
+        "website": "http://techsolutions.com",
+        "image": "techsolutions.png",
+        "membership": 3
+    },
+    {
+        "name": "Green Gardens",
+        "address": "5678 Green Blvd",
+        "phone": "555-5678",
+        "website": "http://greengardens.com",
+        "image": "greengardens.png",
+        "membership": 2
+    },
+    {
+        "name": "Auto Mechanics",
+        "address": "910 Auto Rd",
+        "phone": "555-9100",
+        "website": "http://automechanics.com",
+        "image": "automechanics.png",
+        "membership": 1
+    }
+]
