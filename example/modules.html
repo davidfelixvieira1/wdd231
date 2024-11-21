@@ -1,0 +1,75 @@
+<!-- modules.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses and sections</title>
+    <script src="modules.js" type="module" defer></script>
+  </head>
+  <body>
+    <h1 id="courseName"></h1>
+    <h2 id="courseCode"></h2>
+    <label for="sectionNumber">Section Number</label>
+    <input id="sectionNumber" />
+    <button id="enrollStudent">Enroll Student</button>
+    <button id="dropStudent">Drop Student</button>
+    const aCourse = {
+      courseName: "JavaScript Essentials",
+      courseCode: "JS101",
+      sections: [
+          { sectionNumber: 1, enrollment: 30, maxCapacity: 40 },
+          { sectionNumber: 2, enrollment: 25, maxCapacity: 35 },
+          { sectionNumber: 3, enrollment: 20, maxCapacity: 25 },
+      ],
+      enroll(sectionNumber) {
+          const section = this.sections.find(sec => sec.sectionNumber === sectionNumber);
+          if (section && section.enrollment < section.maxCapacity) {
+              section.enrollment++;
+          }
+      },
+      drop(sectionNumber) {
+          const section = this.sections.find(sec => sec.sectionNumber === sectionNumber);
+          if (section && section.enrollment > 0) {
+              section.enrollment--;
+          }
+      },
+      init() {
+          setCourseInfo(this);
+          renderSections(this.sections);
+      }
+  };
+  
+  // Same as before: export and additional functions
+  function setCourseInfo(course) {
+      const courseTitle = document.querySelector("#course-title");
+      courseTitle.textContent = `${course.courseName} (${course.courseCode})`;
+  }
+  
+  function renderSections(sections) {
+      const sectionList = document.querySelector("#sections");
+      sectionList.innerHTML = ""; // Clear current sections
+      sections.forEach(section => {
+          const listItem = document.createElement("li");
+          listItem.textContent = `Section ${section.sectionNumber}: ${section.enrollment}/${section.maxCapacity}`;
+          sectionList.appendChild(listItem);
+      });
+  }
+  
+  export default aCourse;
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Section#</th>
+          <th>Room#</th>
+          <th>#Enrolled</th>
+          <th>Days</th>
+          <th>Instructor</th>
+        </tr>
+      </thead>
+      <tbody id="sections"></tbody>
+    </table>
+  </body>
+</html>

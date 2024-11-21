@@ -1,60 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WDD231 Course Home Page">
-  <meta name="author" content="David Vieira">
-  <meta property="og:title" content="WDD 231: Course Home Page" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg" />
-  <meta property="og:url" content="https://davidfelixvieira1.github.io/wdd231/" />
-  <meta property="og:description" content="Explore the WDD 231 course resources, assignments, and learning materials to enhance your web design and development skills." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="WDD231 Course Home Page" />
-  <meta name="twitter:description" content="This is the WDD231 Course Home Page, if you are trying to find something really good to study, you're on the right website." />
-  <meta name="twitter:image" content="https://digitallearning.eletsonline.com/wp-content/uploads/2019/03/Online-courses.jpg" />
-  <title>Course Home Page</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="icon" href="favicon.ico">
-  <script src="scripts/script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the Chamber of Commerce">
+    <meta name="author" content="David Vieira">
+    <title>Chamber of Commerce</title>
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:title" content="Chamber of Commerce Home">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/hero.jpg">
+    <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/index.html">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>Welcome to WDD231</h1>
-    <nav id="navbar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">Chamber</a></li>
-        <li><a href="https://github.com/davidfelixvieira1/wdd231">GitHub Profile</a></li>
-        <li><a href="https://www.linkedin.com/in/david-vieira-7a6250215/">LinkedIn</a></li>
-      </ul>
-      <div id="hamburger">&#9776;</div>
-    </nav>
-  </header>
+    <header>
+        <h1>Chamber of Commerce</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="discover.html">Discover</a>
+            <a href="WDD231/index.html">Home</a>
+            <a href="join.html">Join</a>
+        </nav>
+    </header>
 
-  <main>
-    <section id="certificate">
-      <h2>Certificate Courses</h2>
-      <div id="course-list"></div>
-      <button onclick="filterCourses('all')">All Courses</button>
-      <button onclick="filterCourses('WDD')">WDD Courses</button>
-      <button onclick="filterCourses('CSE')">CSE Courses</button>
-      <p>Total Credits: <span id="total-credits"></span></p>
-    </section>
-    <section>
-      <h2>Course Overview</h2>
-      <p>This course will cover various topics in web design and development.</p>
-    </section>
-    <section>
-      <h2>Get Started</h2>
-      <p>Begin your journey into web development!</p>
-    </section>
-  </main>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+          <img src="images/hero.jpg" alt="Hero Image" width="500">
+            <h2>Welcome to Our Chamber</h2>
+            <p>Your gateway to local businesses and opportunities!</p>
+        </section>
 
-  <footer>
-    <p>&copy; <span id="current-year"></span> David Vieira, Brazil</p>
-    <p id="lastModified"></p>
-  </footer>
+        <!-- Call to Action -->
+        <section id="cta">
+            <h2>Join the Chamber of Commerce</h2>
+            <p>Become a part of a vibrant and growing community. <a href="join.html">Join now!</a></p>
+        </section>
+
+        <!-- Current Events -->
+        <section id="events">
+            <h2>Current Events</h2>
+            <p>Stay updated with the latest happenings in our community.</p>
+            <ul>
+                <li>Annual Business Gala - December 15th</li>
+                <li>Networking Night - January 20th</li>
+                <li>Community Clean-Up Drive - February 5th</li>
+            </ul>
+        </section>
+
+        <!-- Weather Section -->
+        <section id="weather">
+            <h2>Weather in Our Area</h2>
+            <div id="weather-data">
+                <!-- Weather data will be injected here via JavaScript -->
+                <p>Loading weather data...</p>
+            </div>
+        </section>
+
+        <!-- Spotlights Section -->
+        <section id="spotlights">
+            <h2>Business Spotlights</h2>
+            <div class="spotlight-cards">
+                <!-- Spotlight cards will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> David Vieira. WDD 231 Project. Last modified: <span id="lastModified"></span></p>
+        <p>Contact us at: contact@chamber.com | Address: 123 Commerce St.</p>
+    </footer>
+
+    <script>
+        // JavaScript for dynamically updating weather, spotlight cards, and other content
+    </script>
 </body>
 </html>

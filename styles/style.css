@@ -1,86 +1,178 @@
 /* Basic styling */
 body, h2, p, ul, li, button {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-  
-  /* Header and navigation styling */
-  header {
-    background-color: #004080;
-    padding: 1em;
-    text-align: center;
-    color: #fff;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: center;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style-type: none;
-  }
-  
-  nav li {
-    margin: 0 1em;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  #hamburger {
-    display: none;
-    font-size: 2em;
-    cursor: pointer;
-  }
-  
-  /* Responsive navigation */
-  @media (max-width: 600px) {
-    nav ul {
-      display: none;
-    }
-    #hamburger {
-      display: block;
-    }
-  }
-  
-  /* Main content styling */
-  main {
-    padding: 1em;
-  }
-  
-  section {
-    margin-bottom: 2em;
-  }
-  
-  footer {
-    background-color: #004080;
-    text-align: center;
-    padding: 1em;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
 
-  footer p {
-    color:white;
+/* Header and navigation styling */
+header {
+  background-color: #004080;
+  padding: 1em;
+  text-align: center;
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+nav li {
+  margin: 0 1em;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+#hamburger {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+/* Responsive navigation */
+@media (max-width: 600px) {
+  nav ul {
+      display: none;
   }
-  
-  /* Course card styling */
-  #course-list div {
-    margin: 0.5em;
-    padding: 0.5em;
-    border: 1px solid #004080;
+  #hamburger {
+      display: block;
   }
-  
-  .completed {
-    background-color: #cce5ff;
-  }
+}
+
+/* Main content styling */
+main {
+  padding: 1em;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+/* Hero image styling */
+.hero {
+  position: relative;
+  background: url('images/hero.jpg') center/cover no-repeat;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero h1 {
+  font-size: 2.5em;
+}
+
+/* Call-to-action button styling */
+.call-to-action {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.call-to-action a {
+  background-color: #004080;
+  color: white;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.call-to-action a:hover {
+  background-color: #00264d;
+}
+
+/* Current events styling */
+.events {
+  background-color: #f9f9f9;
+  padding: 1em;
+  border: 1px solid #ddd;
+}
+
+.events h2 {
+  margin-bottom: 0.5em;
+}
+
+/* Weather section styling */
+.weather {
+  background-color: #e6f7ff;
+  padding: 1em;
+  border: 1px solid #004080;
+  border-radius: 5px;
+}
+
+.weather h2 {
+  margin-bottom: 0.5em;
+}
+
+.weather p {
+  margin: 0.5em 0;
+}
+
+/* Spotlight section styling */
+.spotlight {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.spotlight-card {
+  border: 1px solid #ddd;
+  padding: 1em;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.spotlight-card img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+}
+
+.spotlight-card h3 {
+  margin-bottom: 0.5em;
+}
+
+.spotlight-card p {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Footer styling */
+footer {
+  background-color: #004080;
+  text-align: center;
+  padding: 1em;
+}
+
+footer p {
+  color: white;
+}
+
+nav a {
+  margin-right: 20px; /* Adds space between each link */
+}
+
+nav a:last-child {
+  margin-right: 0; /* Removes space after the last link */
+}
   
   

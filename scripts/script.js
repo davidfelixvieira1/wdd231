@@ -8,33 +8,84 @@ document.getElementById("hamburger").onclick = () => {
   navUl.style.display = navUl.style.display === "flex" ? "none" : "flex";
 };
 
-// Course data and functions
-const courses = [
-  { code: "WDD230", name: "Intro to Web Design", credits: 3, completed: true },
-  { code: "WDD331", name: "Advanced CSS", credits: 3, completed: false },
-  { code: "CSE121B", name: "JavaScript Programming", credits: 2, completed: false },
-  { code: "CSE121A", name: "Intro to Computer Science", credits: 2, completed: true },
+// Weather Section - Fetch Weather Data
+async function fetchWeather() {
+  const apiKey = "YOUR_API_KEY"; // Replace with your OpenWeatherMap API key
+  const city = "Chamber Location City";
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    document.getElementById("weather-temp").textContent = `${Math.round(data.main.temp)}°C`;
+    document.getElementById("weather-desc").textContent = capitalize(data.weather[0].description);
+  } catch (error) {
+    console.error("Error fetching weather data:", error);
+  }
+}
+
+// Capitalize weather description
+function capitalize(str) {
+  return str.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+}
+
+// Spotlight Section - Random Members
+const members = [
+  {
+    name: "Tech Solutions",
+    logo: "images/techsolutions.jpeg",
+    phone: "123-456-7890",
+    address: "456 Tech Avenue",
+    website: "https://techsolutions.com",
+    level: "Gold",
+  },
+  {
+    name: "Green Gardens",
+    logo: "images/greengardens.jpeg",
+    phone: "987-654-3210",
+    address: "789 Green Road",
+    website: "https://greengardens.com",
+    level: "Silver",
+  },
+  {
+    name: "Auto Mechanics",
+    logo: "images/automechanics.jpeg",
+    phone: "555-123-4567",
+    address: "101 Car Street",
+    website: "https://automechanics.com",
+    level: "Gold",
+  },
 ];
 
-function displayCourses(filter) {
-  const courseList = document.getElementById("course-list");
-  courseList.innerHTML = "";
+function displaySpotlights() {
+  const spotlightContainer = document.getElementById("spotlights");
+  spotlightContainer.innerHTML = ""; // Clear previous content
 
-  let totalCredits = 0;
-  courses.filter(course => filter === "all" || course.code.includes(filter))
-         .forEach(course => {
-           const courseDiv = document.createElement("div");
-           courseDiv.classList.add(course.completed ? "completed" : "not-completed");
-           courseDiv.innerHTML = `${course.code}: ${course.name} (${course.credits} credits)`;
-           courseList.appendChild(courseDiv);
-           totalCredits += course.credits;
-         });
-  document.getElementById("total-credits").textContent = totalCredits;
+  const goldAndSilverMembers = members.filter(
+    (member) => member.level === "Gold" || member.level === "Silver"
+  );
+
+  // Select 2-3 random members
+  const randomMembers = goldAndSilverMembers
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 3);
+
+  randomMembers.forEach((member) => {
+    const spotlight = document.createElement("div");
+    spotlight.classList.add("spotlight");
+    spotlight.innerHTML = `
+      <img src="${member.logo}" alt="${member.name} Logo">
+      <h3>${member.name}</h3>
+      <p>${member.address}</p>
+      <p>${member.phone}</p>
+      <a href="${member.website}" target="_blank">Visit Website</a>
+    `;
+    spotlightContainer.appendChild(spotlight);
+  });
 }
 
-function filterCourses(filter) {
-  displayCourses(filter);
-}
+// Initialize functions
+fetchWeather();
+displaySpotlights();
 
-// Initialize course list
-displayCourses("all");
