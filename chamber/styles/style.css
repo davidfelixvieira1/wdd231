@@ -1,51 +1,77 @@
-/* Reset / Normalize styles */
-@import url('normalize.css');
-
-body {
-    font-family: Arial, sans-serif;
+/* Basic styling */
+body, h2, nav a {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
-header, footer {
+header {
     background-color: #004080;
-    color: #ffffff;
+    padding: 1em;
+    color: white;
     text-align: center;
-    padding: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
 }
 
 nav a {
-    margin: 0 10px;
-    color: #ffffff;
+    color: white;
     text-decoration: none;
 }
 
-#directory {
-    display: grid;
-    gap: 20px;
-    padding: 20px;
+nav a:hover {
+    text-decoration: underline;
 }
 
-.grid-view {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-}
-
-.list-view {
-    display: block;
-}
-
-.member-card {
-    border: 1px solid #ccc;
-    padding: 15px;
+/* Hero Section Styling */
+.hero {
+    position: relative;
     text-align: center;
+}
+
+.hero img {
+    margin-top: 10px;
+    width: 60%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1em;
+    border-radius: 8px;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.8em 1.5em;
+    background-color: #004080;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
     background-color: #80c1ff;
 }
 
-.member-card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+/* Footer */
+footer {
+    background-color: #004080;
+    padding: 1em;
+    color: white;
 }
 
-.view-toggle {
-    text-align: center;
-    margin: 20px;
-}
+

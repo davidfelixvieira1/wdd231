@@ -1,47 +1,36 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const directory = document.getElementById("directory");
-    const gridViewBtn = document.getElementById("grid-view");
-    const listViewBtn = document.getElementById("list-view");
+// Date for copyright and last modified
+document.getElementById("current-year").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
-    // Fetch and display members
-    async function loadMembers() {
-        try {
-            const response = await fetch("data/members.json");
-            const members = await response.json();
-            displayMembers(members);
-        } catch (error) {
-            console.error("Error loading members:", error);
-        }
-    }
+// Fetching weather API data
+const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
+const city = 'YourCity'; // Replace with the relevant city
+const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-    // Display members as cards
-    function displayMembers(members) {
-        directory.innerHTML = members.map(member => `
-            <div class="member-card">
-                <img src="images/${member.image}" alt="${member.name}">
-                <h2>${member.name}</h2>
-                <p>${member.address}</p>
-                <p>${member.phone}</p>
-                <a href="${member.website}" target="_blank">Visit Website</a>
-            </div>
-        `).join('');
-    }
+fetch(weatherUrl)
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('weather').innerHTML = `
+      <p>Temperature: ${data.main.temp}°C</p>
+      <p>Condition: ${data.weather[0].description}</p>
+    `;
+  })
+  .catch(error => console.error('Error fetching weather data:', error));
 
-    // Toggle views
-    gridViewBtn.addEventListener("click", () => {
-        directory.classList.add("grid-view");
-        directory.classList.remove("list-view");
-    });
+// Member spotlight feature
+const members = [
+  { name: 'John Doe', role: 'President', image: 'images/john.jpg' },
+  { name: 'Jane Smith', role: 'Vice President', image: 'images/jane.jpg' }
+];
 
-    listViewBtn.addEventListener("click", () => {
-        directory.classList.add("list-view");
-        directory.classList.remove("grid-view");
-    });
+function displayMemberSpotlight() {
+  const randomMember = members[Math.floor(Math.random() * members.length)];
+  document.getElementById('member-spotlight').innerHTML = `
+    <h2>${randomMember.name}</h2>
+    <p>${randomMember.role}</p>
+    <img src="${randomMember.image}" alt="${randomMember.name}">
+  `;
+}
 
-    // Footer - Last modified date
-    document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("lastModified").textContent = document.lastModified;
+displayMemberSpotlight();
 
-    // Load members on page load
-    loadMembers();
-});
