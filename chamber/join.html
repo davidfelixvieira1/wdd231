@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Chamber</title>
+    <link rel="stylesheet" href="styles/chamber.css">
+</head>
+<body>
+    <header>
+        <h1>Join the Chamber of Commerce</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="join.html">Join</a>
+            <a href="thankyou.html">Thank You</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Membership Application</h2>
+        <form method="get" action="thankyou.html">
+            <label>First Name:
+                <input type="text" name="firstName" title="First Name" required autocomplete="given-name">
+            </label>
+            <label>Last Name:
+                <input type="text" name="lastName" title="Last Name" required autocomplete="family-name">
+            </label>
+            <label>Title in Organization:
+                <input type="text" name="orgTitle" title="Organization Title" pattern="[A-Za-z\s-]{7,}" autocomplete="organization-title">
+            </label>
+            <label>Email Address:
+                <input type="email" name="email" title="Email Address" required autocomplete="email" placeholder="example@domain.com">
+            </label>
+            <label>Mobile Phone:
+                <input type="tel" name="phone" title="Phone Number" required autocomplete="tel">
+            </label>
+            <label>Business/Organization Name:
+                <input type="text" name="organization" title="Organization Name" required autocomplete="organization">
+            </label>
+
+            <label>Membership Level:
+                <select name="membership" title="Membership Level">
+                    <option value="NP">Non-Profit Membership (Free)</option>
+                    <option value="Bronze">Bronze Membership</option>
+                    <option value="Silver">Silver Membership</option>
+                    <option value="Gold">Gold Membership</option>
+                </select>
+            </label>
+
+            <label>Organization Description:
+                <textarea name="orgDesc" title="Organization Description"></textarea>
+            </label>
+
+            <input type="hidden" id="timestamp" name="timestamp">
+            <input type="submit" value="Submit Application">
+        </form>
+
+        <!-- Membership Level Cards -->
+        <section class="membership-cards">
+            <div class="card" onclick="openModal('npModal')">Non-Profit Membership</div>
+            <div class="card" onclick="openModal('bronzeModal')">Bronze Membership</div>
+            <div class="card" onclick="openModal('silverModal')">Silver Membership</div>
+            <div class="card" onclick="openModal('goldModal')">Gold Membership</div>
+        </section>
+
+        <!-- Modals -->
+        <div id="npModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('npModal')">&times;</span>
+                <p>Non-Profit Membership details...</p>
+            </div>
+        </div>
+        <!-- Repeat modal structure for other memberships -->
+    </main>
+
+    <footer>
+        <p>Chamber of Commerce &copy; 2024</p>
+    </footer>
+
+    <script src="scripts/chamber.js"></script>
+</body>
+</html>
