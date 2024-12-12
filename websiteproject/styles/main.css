@@ -1,0 +1,85 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #57b2fc;
+    color: #004080;
+}
+
+header {
+    background-color: #004080;
+    color: #fff;
+    padding: 20px;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.content {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 5px 0;
+    background-color: #004080;
+    color: #fff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #004080;
+    background-color: #80c1ff;
+}
+
+header {
+    background-color: #004080;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+body {
+    text-align: center;
+    padding: 50px 20px;
+}
+.hero1 img {
+    margin-top: 20px; /* Adds space between the image and the top */
+}
+.topics {
+    margin-bottom: 10px;
+}
+/* Additional styling here */
